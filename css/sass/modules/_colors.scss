@@ -1,0 +1,25 @@
+/*-------------------------------------
+
+Color stack
+
+-------------------------------------*/
+
+/* Common colors */
+$color-white: #FFF;
+$color-black: #000;
+
+/* Theme colors */
+$theme-color-1: #025f78;
+$theme-color-2: #009def;
+$theme-color-3: #ccdb2b;
+$theme-color-4: #555555;
+$theme-color-5: #333;
+
+//Header
+$header-middle-conversion-fg-color: $theme-color-4;
+$header-right-conversion-fg-color: $theme-color-4;
+
+// Header - Nav bar
+$header-nav-bg-color: $theme-color-2;
+$header-nav-border-color-left: $theme-color-2 + 20;
+$header-nav-border-color-right: $theme-color-2 - 20;
