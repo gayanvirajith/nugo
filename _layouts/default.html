@@ -1,43 +1,100 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <link rel=" stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+    <!-- Bootstrap css -->
+    <link rel=" stylesheet" href="{{ site.baseurl }}/css/bootstrap.min.css">
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+    <!-- Font awesome css -->
+    <link rel=" stylesheet" href="{{ site.baseurl }}/css/font-awesome.min.css">
 
-    </head>
-    <body>
+    <!-- Syntax highlighting CSS -->
+    <link rel=" stylesheet" href="{{ site.baseurl }}/css/syntax.css">
 
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <a class="extra" href="{{ site.baseurl }}/">home</a>
-          </div>
 
-          {{ content }}
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+    <!--[if IE]>
+    <script type="text/javascript">
+        var console = { log: function() {} };
+    </script>
+    <![endif]-->
 
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Gayan Virajith<br />
-                Web developer<br />
-                gayanvirajith@gmail.com
-              </p>
+    <!-- Load google font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Open+Sans::latin' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                    '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    <script src="{{ site.baseurl }}/js/modernizr.js"></script> <!-- Modernizr -->
+</head>
+<body>
+
+{% assign pageImage = '/assets/images/snippets-large.jpg' %}
+
+<header class="masthead" style="background-image: url('{{ site.baseurl }}{{ pageImage }}')">
+    <!-- NAVBAR FIXED
+    ================================================== -->
+    <div class="navbar navbar-custom navbar-fixed-topx" id="navBar">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <a type="button" class="navbar-toggle hidden-sm hidden-md hidden-lg" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="l1"></span>
+                    <span class="l2"></span>
+                    <span class="l3"></span>
+                </a>
+                <a class="navbar-brand" href="#page-top">
+                    Gayan Virajith
+                </a>
             </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/gayanvirajith">github.com/gayanvirajith</a><br />
-              </p>
-            </div>
-          </div>
+            <div class="navbar-collapse collapse">
+                {% include nav-menu.html menuItems="Home"%}
+            </div><!--/.nav-collapse -->
         </div>
+    </div>
+</header>
 
-    </body>
+<div class="site">
+    {{ content }}
+</div>
+
+<footer>
+    <section class="container">
+        <p>Handcrafted by Gayan Virajith. Find me on <span><a href="#">Google</a></span> / <span><a href="#">Github</a></span> or by
+            <a href="mailto: gayanvirajith@gmail.com">Mail</a>.</p>
+    </section>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ baseurl }}/js/bootstrap.min.js"></script>
+<script src="{{ baseurl }}/js/main.js"></script>
+
+<script>
+    $( ".navbar-toggle" ).click(function() {
+        if ($(this).hasClass('is-active')) {
+            $(this).removeClass('is-active');
+        }else {
+            $(this).addClass('is-active');
+        }
+    });
+</script>
+
+</body>
 </html>
