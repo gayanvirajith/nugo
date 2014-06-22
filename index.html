@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Your New Jekyll Site
-image: /assets/images/snippets-large.jpg
+image: /assets/images/home-intro-large.jpg
 ---
 <div id="home">
     <div class="container">
         <ul class="posts">
-            {% for post in site.posts %}
+            {% for post in site.posts limit:12  %}
             <li>
                 <header>
                     <h2>

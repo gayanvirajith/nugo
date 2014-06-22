@@ -1,21 +1,15 @@
 <ul class="nav navbar-nav navbar-right">
-
     {% assign menuItems = include.menuItems | split: "|" %}
     {% for item in menuItems %}
-
     {% assign tempFile = {{item} | append:'.html' | prepend:'/' | downcase %}
-
     {% if tempFile == '/home.html' %}
     {% assign tempFile = '/index.html' %}
     {% endif %}
-
-
     {% assign activeClass = ''; %}
     {% if page.url ==  tempFile %}
     {%  assign activeClass = 'active';  %}
     {% endif %}
-
-    <li class="{{activeClass}} {{tempFile}}">
+    <li class="{{activeClass}}">
         <a href="{{tempFile}}">
             {% if item != 'Posts/Index' %}
             {{item}}
@@ -26,4 +20,3 @@
     </li>
     {% endfor %}
 </ul>
-

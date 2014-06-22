@@ -10,11 +10,12 @@
 
 @import './partials/layout'; // responsive grid and media queries
 
-/*----------------------------------
 
-  Primary style
-
---------------------------------- */
+/*****************************************************************************/
+/*
+/* Primary style
+/*
+/*****************************************************************************/
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,8 +27,11 @@ html * {
   box-sizing: border-box;
 }
 
+
 /*****************************************************************************/
-/* Common 								     */
+/*
+/* Common styles
+/*
 /*****************************************************************************/
 body, ul, p, h1, h2, h3, h4, h5, h6, blockquote, span, i {
   font-family: $base-font-family;
@@ -38,20 +42,28 @@ body {
   color: $theme-color-1;
 }
 
-a{ color: $theme-color-4;text-decoration: underline; }
+a{
+  color: $theme-color-4;
+  text-decoration: underline;
+  @include transition(color .3s ease);
+  &:hover {
+    color: $color-black;
+  }
+}
 
-pre {@include border-radius(0px);}
+pre { @include border-radius(0px); }
+.light { font-weight: 400; }
+
 
 /*****************************************************************************/
 /*
 /* Home
 /*
 /*****************************************************************************/
-
 .meta {color: $theme-color-3;}
 .posts {
   list-style-type: none;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   padding-left: 0;
   padding-right: 0;
 }
@@ -65,6 +77,8 @@ pre {@include border-radius(0px);}
     margin: 0 0 2em 0;
   }
   header, footer { text-align: center; padding: 15px 0;}
+
+  footer {padding-bottom: 0;}
   h2 a { color:$theme-color-1;text-decoration: none; }
   p.meta { color: $theme-color-3;text-transform: uppercase;letter-spacing: 4px; }
 
@@ -76,12 +90,12 @@ pre {@include border-radius(0px);}
   font-size: 80%;
 }
 
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
 
+/*****************************************************************************/
+/*
+/* Site master header - basically an image
+/*
+/*****************************************************************************/
 .masthead {
   min-height: 400px;
   background-size: cover;
@@ -91,13 +105,15 @@ pre {@include border-radius(0px);}
   -ms-transition: min-height 0.4s;
   -o-transition: min-height 0.4s;
   transition: min-height 0.4s;
+  margin-bottom: 80px;
 }
 
 
-.light {
-  font-weight: 400;
-}
-
+/*****************************************************************************/
+/*
+/* Man nar-bar styles - Custom bootstrap navigation
+/*
+/*****************************************************************************/
 .navbar {
   margin-bottom: 0;
   border-bottom: 1px solid rgba(255,255,255,.3);
@@ -108,6 +124,8 @@ pre {@include border-radius(0px);}
 
 .navbar-brand {
   font-weight: 700;
+  border: 1px rgba(255,255,255,.7) solid;
+  @include border-radius(4px);
 }
 
 .navbar-brand:focus {
@@ -123,15 +141,27 @@ pre {@include border-radius(0px);}
 }
 .top-nav-collapse a {color:$theme-color-4;}
 
-.navbar-custom .nav li a {
-  -webkit-transition: background .3s ease-in-out;
-  -moz-transition: background .3s ease-in-out;
-  transition: background .3s ease-in-out;
+.navbar-custom .nav li {
+  margin-right: 10px;
+
+  @include MQ(XS) {
+    margin-right: 0;
+    border-bottom: 1px #f5f5f5 solid;
+  }
 }
 
-.navbar-custom .nav li a:hover,
-.navbar-custom .nav li a:focus,
+.navbar-custom .nav li a {
+  @include transition(background .3s ease-in-out);
+  @include border-radius(4px);
+
+  &:hover, &:focus, &:active {
+    outline: 0;
+    background-color: rgba(191, 191, 191, 0.18);
+  }
+}
+
 .navbar-custom .nav li.active {
+  @include border-radius(4px);
   outline: 0;
   background-color: rgba(255,255,255,.2);
 }
@@ -145,9 +175,46 @@ pre {@include border-radius(0px);}
   }
 }
 
+.navbar-toggle {
+  display: block;@include border-radius(0px);
+}
 .navbar-toggle:focus,
 .navbar-toggle:active {
   outline: 0;
+}
+
+
+/*****************************************************************************/
+/*
+/* Nav-bar toggle fancy click styles
+/*
+/*****************************************************************************/
+span.l1, span.l2, span.l3 {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: $theme-color-1;
+  overflow: hidden;
+  margin-bottom: .60rem;
+  opacity: 1;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+a.is-active {
+  .l1 {
+    -webkit-transform: rotate(45deg) translate(.5rem,.5rem);
+    -ms-transform: rotate(45deg) translate(.7rem,-.7rem);
+    transform: rotate(45deg) translate(.7rem,-.7rem);
+  }
+  .l2 {
+    opacity: 0;
+  }
+  .l3 {
+    -webkit-transform: rotate(-45deg) translate(.7rem,-.7rem);
+    -ms-transform: rotate(-45deg) translate(.7rem,-.7rem);
+    transform: rotate(-45deg) translate(.7rem,-.7rem);
+  }
 }
 
 @media(min-width:767px) {
@@ -171,6 +238,13 @@ pre {@include border-radius(0px);}
   }
 }
 
+
+/*****************************************************************************/
+/*
+/*  Site footer used on every page.
+/*
+/*****************************************************************************/
+
 footer  {
   .container {
     color: $theme-color-2;
@@ -180,17 +254,36 @@ footer  {
   }
 }
 
+
 /*****************************************************************************/
 /*
 /* Posts
 /*
 /*****************************************************************************/
+.post-wrapper article {
+  h1 {text-align: left;margin-bottom: 20px}
+  p.meta {text-align: left;}
+  a { font-weight: $bold;}
+  header,article, footer {
+    padding: 15px 0;
+  }
+  footer{
+    margin-top: 2em;
+    border-top: 1px solid #dededc;
+    padding-top: 2em;
+  }
+}
 
-/* standard */
+
+/*****************************************************************************/
+/*
+/* Standard pre tags
+/*
+/*****************************************************************************/
 .post pre {
   border: 1px solid #ddd;
   background-color: #eef;
-  padding: 0 .4em;
+  padding: .4em;
 }
 
 .post ul, .post ol {
@@ -207,7 +300,12 @@ footer  {
   border: none;
 }
 
-/* terminal */
+
+/*****************************************************************************/
+/*
+/* Terminal
+/*
+/*****************************************************************************/
 .post pre.terminal {
   border: 1px solid #000;
   background-color: #333;
@@ -223,34 +321,84 @@ footer  {
   p.meta {text-align: center;}
 }
 
-.navbar-toggle {
-  display: block;@include border-radius(0px);
-  //padding: 8px 4px;
+
+/*****************************************************************************/
+/*
+/* Visually hide an element
+/*
+/*****************************************************************************/
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
 }
-span.l1, span.l2, span.l3 {
-    display: block;
-    width: 35px;
-    height: 2px;
-    background: $theme-color-1;
-    overflow: hidden;
-    margin-bottom: .7rem;
-    opacity: 1;
-    -webkit-transition: all .3s;
-    transition: all .3s;
+.visually-hidden {
+  @extend %visuallyhidden;
 }
 
-a.is-active {
-  .l1 {
-    -webkit-transform: rotate(45deg) translate(.6rem,.6rem);
-    -ms-transform: rotate(45deg) translate(.6rem,.6rem);
-    transform: rotate(45deg) translate(.4rem,.4rem);
+
+/*****************************************************************************/
+/*
+/* Author component - which renders on article footer
+/*
+/*****************************************************************************/
+.author {
+  h3,h2 {margin: 4px;}
+  h2 {font-weight: $light;font-size: 13px;font-weight: $bold;}
+  h3 {text-transform: uppercase;font-size: 14px;}
+  img {text-align: left;float: left;padding-right: 10px;}
+  p {display: block;font-size: 12px;}
+}
+
+
+/*****************************************************************************/
+/*
+/* Article share buttons - which rendres on article footer
+/*
+/*****************************************************************************/
+.article-share {
+  h3 {text-transform: uppercase;font-size: 14px;  color: $theme-color-1;  }
+}
+
+
+/*****************************************************************************/
+/*
+/* Pagination button set wrapper
+/*
+/*****************************************************************************/
+.pager-wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+.pager-wrapper ul.pagination {
+  margin-top: 15px;
+  padding-bottom: 15px;
+  li{
+    a {
+      @include  border-radius(0px);
+      color: $theme-color-1;
+      @include transition(all .3s ease-in-out);
+      &:hover, &:focus, &:active {
+        color: $theme-color-4;
+      }
+    }
+    span {
+      @include  border-radius(0px);
+    }
   }
-  .l2 {
-    opacity: 0;
-  }
-  .l3 {
-    -webkit-transform: rotate(-45deg) translate(.6rem,-.6rem);
-    -ms-transform: rotate(-45deg) translate(.6rem,-.6rem);
-    transform: rotate(-45deg) translate(.6rem,-.6rem);
+  li.active {
+    a {
+      background-color: $theme-color-4;
+      border-color: $theme-color-4;
+      color: $color-white;
+      &:hover, &:focus, &:active {
+        background-color: $theme-color-1;
+      }
+    }
   }
 }
