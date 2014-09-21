@@ -1,0 +1,26 @@
+# Site settings
+title: Your awesome title
+email: your-email@domain.com
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+baseurl: ""
+url: "http://yourdomain.com"
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Base URL
+baseurl: /nugo
+
+# Site live URL
+#url: http://webcreate.lk/harmony
+
+# Localhost 
+url: http://gayanvirajith.github.io/nugo
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Sass conversion configs
+sass:
+    sass_dir: assets/css/_sass
+    style: :compressed

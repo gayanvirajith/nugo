@@ -1,0 +1,48 @@
+// Returns lighter color
+@function opacity($color, $opacity: .8) {
+	@return rgba($color, $opacity);
+}
+
+
+
+
+
+// Rem fallback - credits: http://zerosixthree.se/
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+
+$pixelBase : 16; /* 1 */
+
+@function parseInt($n) {
+	@return $n / ($n * 0 + 1); /* 2 */
+}
+
+@function toPx($values){ /* 3 */
+
+      $list: (); /* 4 */
+
+      @each $value in $values { /* 5 */
+
+            $unit : unit($value); /* 6 */
+            $val  : parseInt($value); /* 2 */
+
+            @if ($px-only) and ($unit == 'rem') { /* 7 */
+                  $list: append($list, ($val * $pixelBase) + px); /* 7 */
+            }
+
+            @else if($unit == 'px') or ($unit == 'rem'){ /* 8 */
+                  $list: append($list, $value); /* 8 */
+            }
+
+            @else {
+                  @warn 'There is no unit conversion for #{$unit}'; /* 9 */
+            }
+
+      }
+
+      @return $list(); /* 10 */
+
+}
