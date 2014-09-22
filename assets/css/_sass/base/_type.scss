@@ -1,0 +1,27 @@
+h1, h2, h3, h4, h5, h6 { line-height: 1.5; }
+
+p { line-height: 1.4;}
+
+
+// Utilities
+.bold    { font-weight: bold; }
+.regular { font-weight: normal; }
+.italic  { font-style: italic; }
+.caps    { text-transform: uppercase; letter-spacing: .2em; }
+
+// Alignment
+.left-align   { text-align: left; }
+.center       { text-align: center; }
+.right-align  { text-align: right; }
+.justified    { text-align: justify; }
+.display-none { display: none; }
+
+ul {
+	list-style-position: inside;  		
+}
+ol {
+  list-style: decimal;
+  list-style-position: inside;  
+}
+
+h1, h2, h3, h4, h5, h6 { color: $body-text;}

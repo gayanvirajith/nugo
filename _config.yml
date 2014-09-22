@@ -13,8 +13,9 @@ baseurl: /nugo
 # Site live URL
 #url: http://webcreate.lk/harmony
 
-# Localhost 
+# Site URL
 url: http://gayanvirajith.github.io/nugo
+url: http://localhost:4000
 
 # Build settings
 markdown: kramdown
