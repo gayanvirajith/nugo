@@ -15,7 +15,7 @@ baseurl: /nugo
 
 # Site URL
 url: http://gayanvirajith.github.io/nugo
-url: http://localhost:4000
+# url: http://localhost:4000
 
 # Build settings
 markdown: kramdown
