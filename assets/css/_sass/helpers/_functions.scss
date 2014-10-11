@@ -3,9 +3,9 @@
 	@return rgba($color, $opacity);
 }
 
-
-
-
+@function rootUrl($image){
+  @return url("" + $global-url + "" + $image + "");
+}
 
 // Rem fallback - credits: http://zerosixthree.se/
 @function calculateRem($size) {
