@@ -22,18 +22,9 @@ body {
     size: 100%;
     family: $primary-font; // variables inside partials > _variables.scss
   }
-  // background-color: #e7edee;
-  background-color: #e7E7E7;
-  background-color: #EAEAEA;
   background-color: #e1ebf4;
   color: $body-text;
 }
-
-
-body, html {
-  height: 100%;
-}
-
 img {
   border: 0;
   display: block;
@@ -43,104 +34,4 @@ img {
 
 a {
   text-decoration: none;
-}
-
-div#main-container {
-  width: 90%;
-  max-width: $M; // see breakpoints in _sass/partials/_layout.scss
-  margin: 0 auto;
-  padding: 60px 0;
-  &::after { /* Clearfix */
-        content: '';
-        display: table;
-        clear: both;
-  }
-}
-
-.content-wrapper{
-  width: 100%;
-  height: auto;
-  display: block;
-  background: #fefefd;
-  @include border-radius(0 0 4px 4px);
-  @include box-shadow(0, 1px, 5px, rgba(0,0,0,0.15));
-  overflow: hidden;
-}
-
-.sidebar, .content {
-	@include column(1);	
-  display: block;
-}
-
-.sidebar {  
-
-	@include MQ(M) {        	    
-    min-height: 500px;
-    @include column(.30);
-	}
-}
-
-.sidebar img, .sidebar h1, .sidebar h2, .sidebar p {
-  margin: 0 auto;
-  text-align: center;  
-}
-
-.sidebar img { 
-  width: 80px;
-  height: 80px;  
-  @include border-radius(50%);
-  margin-bottom: 20px;
-}
-
-.sidebar h1 { 
-  @include font-size(20px); 
-  color: darken($color-1, 15%);   
-  padding-bottom: 20px;
-}
-
-.sidebar h2 { @include font-size(15px); }
-
-.sidebar p { @include font-size(14px); }
-
-.sidebar p.tagline { min-height: 150px;padding: 5px 0;}
-
-.sidebar a {
-  color: $color-1;
-}
-
-.sidebar p.copyright {  
-  padding: 0 15px;
-  text-align: center;
-  @include font-size(13px);
-}
-
-.sidebar-container {
-  padding:15px 0;  
-}
-
-.content {
-  border-left: solid 1px #e6e6e6;
-  border-top: solid 1px #e6e6e6;
-  @include MQ(M) {
-    border-top: none;
-		@include column(.6888);
-    @include box-shadow(-3px, 0, 6px, #eee);
-    min-height: 500px;
-	}	
-}
-
-.content-container {
-  padding: 15px;
-}
-
-.topping {
-  padding: 10px 0;
-  background: #f2f2f4;
-  border: solid 1px #ddd;
-  border-width: 1px 0;
-  border-radius: 4px 4px 0 0;
-  -webkit-box-shadow: inset 0 2px 1px rgba(255,255,255,0.5),inset 0 -3px 6px rgba(0,0,0,0.05),0 1px 4px rgba(0,0,0,0.2);
-  -moz-box-shadow: inset 0 2px 1px rgba(255,255,255,0.5),inset 0 -3px 6px rgba(0,0,0,0.05),0 1px 4px rgba(0,0,0,0.2);
-  box-shadow: inset 0 2px 1px rgba(255,255,255,0.5),inset 0 -3px 6px rgba(0,0,0,0.05),0 1px 4px rgba(0,0,0,0.2);
-  margin-top: 12px;
 }
