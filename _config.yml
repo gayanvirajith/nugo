@@ -7,6 +7,18 @@ url: "http://yourdomain.com"
 twitter_username: jekyllrb
 github_username:  jekyll
 
+# Exclude files
+exclude: 
+ - CNAME
+ - Gemfile
+ - Rakefile
+ - README.md
+ - .gitignore
+ - .sass-cache
+ - Gemfile.lock
+ - node_modules
+ - gulpfile.js
+
 # Base URL
 baseurl: /nugo
 
