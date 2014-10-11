@@ -51,12 +51,12 @@
 
 
 @mixin box-sizing ($box) {
-//  content-box | border-box | inherit
-  -webkit-transition: $box;
-     -moz-transition: $box;
-      -ms-transition: $box;
-       -o-transition: $box;
-          transition: $box;
+  //  content-box | border-box | inherit
+  -webkit-box-sizing: $box;
+     -moz-box-sizing: $box;
+      -ms-box-sizing: $box;
+       -o-box-sizing: $box;
+          box-sizing: $box;
 }
 
 
