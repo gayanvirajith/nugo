@@ -25,33 +25,7 @@ layout: compress
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <style type="text/css">
-        *, ::after, ::before { transition: border-box; -webkit-transition: border-box; }
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0px; padding: 0px; border: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; line-height: inherit; vertical-align: baseline; }
-html * { -webkit-font-smoothing: antialiased; }
-div#main-container { width: 90%; max-width: 768px; margin: 0px auto; padding: 60px 0px; }
-.topping { padding: 10px 0px; border-style: solid; border-color: rgb(221, 221, 221); border-width: 1px 0px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; -webkit-box-shadow: rgba(255, 255, 255, 0.498039) 0px 2px 1px inset, rgba(0, 0, 0, 0.0470588) 0px -3px 6px inset, rgba(0, 0, 0, 0.2) 0px 1px 4px; box-shadow: rgba(255, 255, 255, 0.498039) 0px 2px 1px inset, rgba(0, 0, 0, 0.0470588) 0px -3px 6px inset, rgba(0, 0, 0, 0.2) 0px 1px 4px; margin-top: 12px; background: rgb(242, 242, 244); }
-.content-wrapper { width: 100%; height: auto; display: block; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; -webkit-box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 5px; box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 5px; overflow: hidden; background: rgb(254, 254, 253); }
-.sidebar, .content { width: 100%; float: left; display: block; }
-.sidebar { min-height: 500px; width: 30%; float: left; }
-.sidebar-container { padding: 15px 0px; }
-img { border: 0px; display: block; max-width: 100%; height: auto; }
-.sidebar img, .sidebar h1, .sidebar h2, .sidebar p { margin: 0px auto; text-align: center; }
-.sidebar img { width: 80px; height: 80px; border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; margin-bottom: 20px; }
-h1, h2, h3, h4, h5, h6 { line-height: 1.5; color: rgb(51, 51, 51); }
-.sidebar h1 { font-size: 1.25rem; color: rgb(48, 65, 94); padding-bottom: 20px; }
-.italic { font-style: italic; }
-.sidebar h2 { font-size: 0.9375rem; }
-p { line-height: 1.4; }
-.sidebar p { font-size: 0.875rem; }
-.sidebar p.tagline { min-height: 150px; padding: 5px 0px; }
-a { text-decoration: none; }
-.sidebar a { color: rgb(74, 100, 145); }
-.content { border-left-style: solid; border-left-width: 1px; border-left-color: rgb(230, 230, 230); border-top-style: none; border-top-width: 1px; border-top-color: rgb(230, 230, 230); width: 68.88%; float: left; -webkit-box-shadow: rgb(238, 238, 238) -3px 0px 6px; box-shadow: rgb(238, 238, 238) -3px 0px 6px; min-height: 500px; }
-.content-container { padding: 15px; }
-ol, ul { list-style: none; }
-ul { list-style-position: inside; }
-</style>
+        <style type="text/css"></style>
 	</head>
     <body>
 		<div id="main-container">
@@ -78,62 +52,62 @@ ul { list-style-position: inside; }
             else window.addEventListener('load', cb);
 
             // // noprotect
-            // var CSSCriticalPath = function(w, d, opts) {
-            //   var opt = opts || {};
-            //   var css = {};
-            //   var pushCSS = function(r) {
-            //     if(!!css[r.selectorText] === false) css[r.selectorText] = {};
-            //     var styles = r.style.cssText.split(/;(?![A-Za-z0-9])/);
-            //     for(var i = 0; i < styles.length; i++) {
-            //       if(!!styles[i] === false) continue;
-            //       var pair = styles[i].split(": ");
-            //       pair[0] = pair[0].trim(); 
-            //       pair[1] = pair[1].trim();
-            //       css[r.selectorText][pair[0]] = pair[1];
-            //     }
-            //   };
+            var CSSCriticalPath = function(w, d, opts) {
+              var opt = opts || {};
+              var css = {};
+              var pushCSS = function(r) {
+                if(!!css[r.selectorText] === false) css[r.selectorText] = {};
+                var styles = r.style.cssText.split(/;(?![A-Za-z0-9])/);
+                for(var i = 0; i < styles.length; i++) {
+                  if(!!styles[i] === false) continue;
+                  var pair = styles[i].split(": ");
+                  pair[0] = pair[0].trim(); 
+                  pair[1] = pair[1].trim();
+                  css[r.selectorText][pair[0]] = pair[1];
+                }
+              };
               
-            //   var parseTree = function() { 
-            //     // Get a list of all the elements in the view.
-            //     var height = w.innerHeight;
-            //     var walker = d.createTreeWalker(d.body, NodeFilter.SHOW_ELEMENT, function(node) { return NodeFilter.FILTER_ACCEPT; }, true);
+              var parseTree = function() { 
+                // Get a list of all the elements in the view.
+                var height = w.innerHeight;
+                var walker = d.createTreeWalker(d.body, NodeFilter.SHOW_ELEMENT, function(node) { return NodeFilter.FILTER_ACCEPT; }, true);
 
-            //     while(walker.nextNode()) {
-            //       var node = walker.currentNode;
-            //       var rect = node.getBoundingClientRect();
-            //       if(rect.top < height || opt.scanFullPage) {
-            //         var rules = w.getMatchedCSSRules(node);
-            //         if(!!rules) {
-            //           for(var r = 0; r < rules.length; r++) {
-            //             pushCSS(rules[r]); 
-            //           }
-            //         }
-            //       } 
-            //     }
-            //   };
+                while(walker.nextNode()) {
+                  var node = walker.currentNode;
+                  var rect = node.getBoundingClientRect();
+                  if(rect.top < height || opt.scanFullPage) {
+                    var rules = w.getMatchedCSSRules(node);
+                    if(!!rules) {
+                      for(var r = 0; r < rules.length; r++) {
+                        pushCSS(rules[r]); 
+                      }
+                    }
+                  } 
+                }
+              };
              
-            //   this.generateCSS = function() {
-            //     var finalCSS = "";
-            //     for(var k in css) {
-            //       finalCSS += k + " { ";
-            //       for(var j in css[k]) {
-            //         finalCSS += j + ": " + css[k][j] + "; ";
-            //       }
-            //       finalCSS += "}\n";
-            //     }
+              this.generateCSS = function() {
+                var finalCSS = "";
+                for(var k in css) {
+                  finalCSS += k + " { ";
+                  for(var j in css[k]) {
+                    finalCSS += j + ": " + css[k][j] + "; ";
+                  }
+                  finalCSS += "}\n";
+                }
                 
-            //     return finalCSS;
-            //   };
+                return finalCSS;
+              };
               
-            //   parseTree();
-            // };
+              parseTree();
+            };
 
-            // window.onload = function() {
-            //   var cp = new CSSCriticalPath(window, document, { scanFullPage: false});
-            //   var css = cp.generateCSS();
-            //   $('style').html(css);
+            window.onload = function() {
+              var cp = new CSSCriticalPath(window, document, { scanFullPage: false});
+              var css = cp.generateCSS();
+              $('style').html(css);
             
-            // };
+            };
         </script>
         <!-- jQuery -->
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
