@@ -2,11 +2,11 @@
  * Above the fold scss
  */
 
-@import "./_sass/helpers/all";
+@import "../../assets/css/_sass/helpers/all";
 
-@import "./_sass/base/all";
+@import "../../assets/css/_sass/base/all";
 
-@import "./_sass/modules/all";
+@import "../../assets/css/_sass/modules/all";
 
 html * {
   -webkit-font-smoothing: antialiased;
