@@ -17,13 +17,15 @@ html * {
   @include box-sizing(border-box);
 }
 
+
 body {
   font: {
     size: 100%;
     family: $primary-font; // variables inside partials > _variables.scss
   }
-  background-color: #e1ebf4;
-  color: $body-text;
+  color: $body-text;  
+  
+
 }
 
 img {
