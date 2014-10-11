@@ -2,11 +2,11 @@
  * Above the fold scss
  */
 
-@import "../../assets/css/_sass/helpers/all";
+@import "./_sass/helpers/all"
 
-@import "../../assets/css/_sass/base/all";
+@import "./_sass/base/all";
 
-@import "../../assets/css/_sass/modules/all";
+@import "./_sass/modules/all";
 
 html * {
   -webkit-font-smoothing: antialiased;
@@ -24,17 +24,16 @@ body {
   }
   color: $body-text;
   background-repeat: repeat;
-  background-position: right top;
+  background-position: top left;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   word-break: break-all;
-  background-image: rootUrl('/assets/css/images/min/bg-mobile.jpg');
+  background-image: url('/assets/css/images/bg-mobile.jpg');
 
   @include MQ(M) {
     background-color: #e1ebf4;
-    background-position: top left;
-    background-image: rootUrl('/assets/css/images/min/bg-desktop.jpg');
+    background-image: url('/assets/css/images/bg-desktop.jpg');
   }
 }
 

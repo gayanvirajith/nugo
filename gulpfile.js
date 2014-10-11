@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	sass = require('gulp-ruby-sass'),
-	plumber = require('gulp-plumber');
+	plumber = require('gulp-plumber'),
+	imagemin = require('gulp-imagemin');
 
 function errorLog(error) {
 	console.error.bind(error);
@@ -29,13 +30,23 @@ gulp.task('uglify-css', function(){
 // Convert sass files into css
 gulp.task('scss', function (){
 	gulp.src('_includes/css/atf.scss')
-	// .pipe(plumber())
+	.pipe(plumber())
 	.pipe(sass({
 		style: 'compressed',
-		// loadPath: __dirname + 'assets/css'
+		loadPath: __dirname + 'assets/css'
 	}))
 	.on('error', function (err) { console.log(err); })
 	.pipe(gulp.dest('_includes/css/'));
+});
+
+// Gulp task - img-min
+// Compress images
+gulp.task('img-min', function() {
+	gulp.src('assets/css/images/*')
+		.pipe(imagemin({
+			progressive: false
+		}))
+		.pipe(gulp.dest('assets/css/images/min/'))
 });
 
 // Gulp task - watch
