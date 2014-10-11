@@ -29,11 +29,11 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   word-break: break-all;
-  background-image: rootUrl('assets/css/images/bg-mobile.jpg');
+  background-image: rootUrl('/assets/css/images/bg-mobile.jpg');
 
   @include MQ(M) {
     background-color: #e1ebf4;
-    background-image: rootUrl('assets/css/images/bg-desktop.jpg');
+    background-image: rootUrl('/assets/css/images/bg-desktop.jpg');
   }
 }
 
