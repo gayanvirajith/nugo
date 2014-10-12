@@ -53,3 +53,104 @@ img {
 a {
   text-decoration: none;
 }
+
+div#main-container {
+  width: 90%;
+  max-width: $L; // see breakpoints in _sass/partials/_layout.scss
+  margin: 0 auto;
+  padding: 2em 0;
+  &::after { /* Clearfix */
+        content: '';
+        display: table;
+        clear: both;
+  }
+}
+
+div.post-container {
+  padding: 2em 0;
+  display: block;
+  position:relative;
+  clear: left;
+  width: 100%;
+  overflow: hidden;
+
+  @include MQ(M) {
+    padding: 4em 0;
+  }
+}
+
+div.post-container .post {
+  background-color: $color-white;
+  @include column(1);
+
+  @include MQ(M) {
+    @include column(.76);
+  }
+  .content {
+    padding: 1em;
+    @include MQ(M) {
+      padding: 2em;
+    }
+  }
+
+  h2.title {
+    border-bottom: 1px #E7E7E7 solid;
+    word-wrap: break-word;
+    margin-bottom: 15px;
+    text-align:center;
+    padding-bottom: .5em;
+
+    @include MQ(M) {
+      padding-bottom: .8em;      
+    }
+  }
+}
+
+div.post-container .post-meta {
+  @include column(1);
+  
+  @include MQ(M) {
+    margin-right: 4%; 
+    @include column(.2);
+  }
+
+  .meta, .author {
+    display: block;
+    padding: 1em;
+    font-style: italic;
+    @include MQ(M) {
+      text-align: center;
+    }
+  }
+  .meta { 
+    color: $color-white;
+    background-color: $color-1;
+    position:relative;
+    text-align: center;
+  }
+  .author {
+    color: $color-3;
+    background-color: $color-2;
+    display: none;
+    @include font-size(12px);
+    @include MQ(M) {
+      display: block;
+      @include font-size(13px);
+    }
+  }
+}
+.arrow-left {
+  position:absolute;
+  right: -8px;
+  top: 30%;
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;  
+  border-left: 10px solid $color-1;
+  display: none;
+
+  @include MQ(M) {
+    display: block;
+  }
+}

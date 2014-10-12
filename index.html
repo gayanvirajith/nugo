@@ -1,8 +1,25 @@
 ---
 layout: default
 ---
-<h1>Nugo</h1>
-
-<p>Hello, we are testing this page with google page speed.</p>
-
-{{ site.sass.sass_dir }}
+{% for post in site.posts %}
+	<div class="post-container">
+		<div class="post-meta">
+			<span class="meta">
+				{{ post.date | date: "%b %-d, %Y" }}
+				<span class="arrow-left"></span>			
+			</span>
+			<span class="author">
+				By Gayan Virajith
+			</span>
+		</div>
+		<div class="post">
+			{% if post.thumbnail %}
+			<img src="{{ "/thumbnails/" | append: post.thumbnail | prepend: site.baseurl | prepend: site.url }}">
+			{% endif %}
+			<div class="content">
+				<h2 class="title">{{ post.title }}</h2>
+				{{ post.content }}
+			</div>
+		</div>
+	</div>
+{% endfor %}
