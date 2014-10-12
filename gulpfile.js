@@ -29,7 +29,7 @@ gulp.task('uglify-css', function(){
 // Gulp task - scss
 // Convert sass files into css
 gulp.task('scss', function (){
-	gulp.src('_includes/css/atf.scss')
+	gulp.src('assets/css/atf.scss')
 	.pipe(plumber())
 	.pipe(sass({
 		style: 'compressed',
@@ -52,7 +52,7 @@ gulp.task('img-min', function() {
 // Gulp task - watch
 // Listen the changes and run a task
 gulp.task('watch', function(){
-	gulp.watch('_includes/css/atf.scss', ['scss'])
+	gulp.watch('assets/css/atf.scss', ['scss'])
 });
 
 // Default gulp task
