@@ -46,7 +46,12 @@ gulp.task('img-min', function() {
 		.pipe(imagemin({
 			progressive: false
 		}))
-		.pipe(gulp.dest('assets/css/images/min/'))
+		.pipe(gulp.dest('assets/css/images/min/'));
+	gulp.src('thumbnails/*.jpg')
+		.pipe(imagemin({
+			progressive: false
+		}))
+		.pipe(gulp.dest('thumbnails/min/'))
 });
 
 // Gulp task - watch

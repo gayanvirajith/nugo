@@ -34,10 +34,6 @@ layout: compress
       <div id="main-container">
       	{{ content }}
       </div>
-      <!-- jQuery -->
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
-      <!-- When no internet load JQuery from local -->
-      <script>window.jQuery || document.write('<script src="{{ site.baseurl }}/assets/js/jquery.min.js"><\/script>')</script>
       <script type="text/javascript">
             var cb = function() {
               var l = document.createElement('link'); l.rel = 'stylesheet';
@@ -48,6 +44,11 @@ layout: compress
                 webkitRequestAnimationFrame || msRequestAnimationFrame;
             if (raf) raf(cb);
             else window.addEventListener('load', cb);
-        </script>
+      </script>
+      <!-- jQuery -->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+      <!-- When no internet load JQuery from local -->
+      <script>window.jQuery || document.write('<script src="{{ site.baseurl }}/assets/js/jquery.min.js"><\/script>')</script>
+      <script async src="{{ site.baseurl }}/assets/js/all.js" async></script>
     </body>
 </html>

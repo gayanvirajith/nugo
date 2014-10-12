@@ -14,7 +14,10 @@ layout: default
 		</div>
 		<div class="post">
 			{% if post.thumbnail %}
-			<img src="{{ "/thumbnails/" | append: post.thumbnail | prepend: site.baseurl | prepend: site.url }}">
+			<!-- <img src="{{ "/thumbnails/" | append: post.thumbnail | prepend: site.baseurl | prepend: site.url }}"> -->
+			<img 
+				src="{{ "/thumbnails/min/" | append: post.thumbnail_small | prepend: site.baseurl | prepend: site.url }}"
+				srcset="{{ "/thumbnails/min/" | append: post.thumbnail | prepend: site.baseurl | prepend: site.url }} 1280w, {{ "/thumbnails/min/" | append: post.thumbnail_medium | prepend: site.baseurl | prepend: site.url }} 768w, {{ "/thumbnails/min/" | append: post.thumbnail_small | prepend: site.baseurl | prepend: site.url }} 320w">
 			{% endif %}
 			<div class="content">
 				<h2 class="title">{{ post.title }}</h2>
