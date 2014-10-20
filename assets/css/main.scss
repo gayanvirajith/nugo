@@ -21,7 +21,7 @@ html * {
 body {
   font: {
     size: 100%;
-    family: $primary-font; // variables inside partials > _variables.scss
+    family: $font-family-base; // variables inside partials > _variables.scss
   }
   color: $body-text;  
   
@@ -45,4 +45,13 @@ hr {
   border: 0;
   border-top: 1px solid #eee;
   height: 0;
+}
+
+// Page header
+// -------------------------
+
+.page-header {
+  padding-bottom: (($line-height-computed / 2) - 1);
+  margin: ($line-height-computed * .15) 0 $line-height-computed;
+  border-bottom: 1px solid $page-header-border-color;
 }

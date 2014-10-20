@@ -20,7 +20,7 @@ html * {
 body {
   font: {
     size: 100%;
-    family: $primary-font; // variables inside partials > _variables.scss
+    family: $font-family-base; // variables inside partials > _variables.scss
   }
   color: $body-text;
   background-repeat: repeat;
@@ -28,7 +28,6 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  word-break: break-all;
   background-color: #e1ebf4;
   background-image: rootUrl('/assets/css/images/min/bg-mobile.jpg');
   @include MQ(M) {
@@ -56,7 +55,7 @@ a {
 
 div#main-container {
   width: 90%;
-  max-width: $L; // see breakpoints in _sass/partials/_layout.scss
+  max-width: 1000px; // see breakpoints in _sass/partials/_layout.scss
   margin: 0 auto;
   padding: 2em 0;
   &::after { /* Clearfix */
@@ -91,19 +90,12 @@ div.post-container .post {
     @include MQ(M) {
       padding: 2em;
     }
-  }
-
-  h2.title {
-    border-bottom: 1px #E7E7E7 solid;
-    word-wrap: break-word;
-    margin-bottom: 15px;
-    text-align:center;
-    padding-bottom: .5em;
-
-    @include MQ(M) {
-      padding-bottom: .8em;      
+    .page-header h2.title {
+      text-align: center;
+      margin-top: 0;
     }
   }
+  
 }
 
 div.post-container .post-meta {
