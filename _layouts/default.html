@@ -51,16 +51,13 @@
           if (raf) raf(cb);
           else window.addEventListener('load', cb);
       </script>      
-      <script src="{{ site.baseurl }}/assets/js/all.js"></script>      
+      <script async src="{{ site.baseurl }}/assets/js/all.js"></script>      
       <script>        
-          var config = {
-            easing: 'hustle',
-            reset:  true,
-            delay:  'once',
-            vFactor: 0.20,
-            wait:     '1.5s',
+          var sr = function() {
+            var config = {}            
+            window.sr = new scrollReveal( config );  
           }
-          window.sr = new scrollReveal( config );              
+          window.addEventListener('load', sr)
       </script>       
     </body>
 </html>
