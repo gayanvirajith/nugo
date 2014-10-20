@@ -20,7 +20,9 @@ layout: default
 				srcset="{{ "/thumbnails/min/" | append: post.thumbnail | prepend: site.baseurl | prepend: site.url }} 1280w, {{ "/thumbnails/min/" | append: post.thumbnail_medium | prepend: site.baseurl | prepend: site.url }} 768w, {{ "/thumbnails/min/" | append: post.thumbnail_small | prepend: site.baseurl | prepend: site.url }} 320w">
 			{% endif %}
 			<div class="content">
-				<h2 class="title">{{ post.title }}</h2>
+				<div class="page-header">					
+					<h2 class="title">{{ post.title }}</h2>
+				</div>
 				{{ post.content }}
 			</div>
 		</div>
